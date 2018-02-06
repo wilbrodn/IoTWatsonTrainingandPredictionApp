@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="src/test/java"/>
+	<classpathentry including="**/*.java" kind="src" path="src/main/java"/>
+	<classpathentry kind="var" path="M2_REPO/javax/xml/bind/jaxb-api/2.2/jaxb-api-2.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/activation/activation/1.1/activation-1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="M2_REPO/com/github/sarxos/webcam-capture/0.3.10/webcam-capture-0.3.10.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/nativelibs4java/bridj/0.6.2/bridj-0.6.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/java-sdk/3.8.0/java-sdk-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/alchemy/3.8.0/alchemy-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/core/3.8.0/core-3.8.0.jar" sourcepath="SOURCE_ATTACHER/core-3.8.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/squareup/okhttp3/okhttp/3.7.0/okhttp-3.7.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/squareup/okio/okio/1.12.0/okio-1.12.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/squareup/okhttp3/logging-interceptor/3.7.0/logging-interceptor-3.7.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/squareup/okhttp3/okhttp-urlconnection/3.4.2/okhttp-urlconnection-3.4.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/bundles/repackaged/jersey-jsr166e/2.22.2/jersey-jsr166e-2.22.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/conversation/3.8.0/conversation-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/dialog/3.8.0/dialog-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/discovery/3.8.0/discovery-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/document-conversion/3.8.0/document-conversion-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/language-translation/3.8.0/language-translation-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/language-translator/3.8.0/language-translator-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/natural-language-classifier/3.8.0/natural-language-classifier-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/natural-language-understanding/3.8.0/natural-language-understanding-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/personality-insights/3.8.0/personality-insights-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/retrieve-and-rank/3.8.0/retrieve-and-rank-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/speech-to-text/3.8.0/speech-to-text-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/text-to-speech/3.8.0/text-to-speech-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/tone-analyzer/3.8.0/tone-analyzer-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/tradeoff-analytics/3.8.0/tradeoff-analytics-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/visual-recognition/3.8.0/visual-recognition-3.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/messaging/watson-iot/0.2.4/watson-iot-0.2.4.jar" sourcepath="SOURCE_ATTACHER/watson-iot-0.2.4-sources-1502204778865.jar"/>
+	<classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.1.1/org.eclipse.paho.client.mqttv3-1.1.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-net/commons-net/3.3/commons-net-3.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.10/commons-codec-1.10.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpclient/4.5.1/httpclient-4.5.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpcore/4.4.3/httpcore-4.4.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/joda-time/joda-time/2.9.2/joda-time-2.9.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/wink/wink-common/1.4/wink-common-1.4.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-impl/2.2.1.1/jaxb-impl-2.2.1.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/geronimo/specs/geronimo-jaxrs_1.1_spec/1.0/geronimo-jaxrs_1.1_spec-1.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/geronimo/specs/geronimo-annotation_1.1_spec/1.0/geronimo-annotation_1.1_spec-1.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/junit/junit/3.8.1/junit-3.8.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/cloudant/cloudant-client/2.9.0/cloudant-client-2.9.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/cloudant/cloudant-http/2.9.0/cloudant-http-2.9.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-io/commons-io/2.4/commons-io-2.4.jar"/>
+	<classpathentry kind="src" path=".apt_generated">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
