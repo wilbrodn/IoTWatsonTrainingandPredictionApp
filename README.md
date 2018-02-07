@@ -23,9 +23,9 @@ Architecture:
 
 After completing this journey you will understand how to:
 
-a. Train VR classifier to detect an object in an image.
-b. Recognize speech using Speech To Text(EN) service of Watson.
-c. User friendly interaction by playing WAV stream received by calling Text to Speech.
+a. Train VR classifier to detect an object in an image.<br/>
+b. Recognize speech using Speech To Text(EN) service of Watson.<br/>
+c. User friendly interaction by playing WAV stream received by calling Text to Speech.<br/>
 d. Store Images on cloud using IBM Cloud Cloudant DB service. <br/>
 e. Leverage the IBM Cloud IoT platform. <br/>
 
@@ -44,22 +44,22 @@ Pre Requisite:
 4. This will create below three IBM Cloud service instances for you to start with IoT stuff:
 	* Node-Red JS sdk
 	* IoT Platform service
-	* Cloudant NoSQL DB service. <br/>
+	* Cloudant NoSQL DB service. <br/><br/>
 		Your newly created app instance will look like below:
 		<img src="src/extresources/images/Snip20180202_15.png" allign="center"/>
-5. get the credentials for below services, we will be updating them in a ".properties" file in few further steps:
-	a. Speech to Text
-	b. Text to Speech
-	c. Visual Recognition
-	d. IoT (created in previous step)
-	e. Cloudant NoSQL(created in previus step)
+5. get the credentials for below services, we will be updating them in a ".properties" file in few further steps:<br/>
+	a. Speech to Text<br/>
+	b. Text to Speech<br/>
+	c. Visual Recognition<br/>
+	d. IoT (created in previous step)<br/>
+	e. Cloudant NoSQL(created in previus step)<br/>
 	
 Note: You can mannually add your precreated Watson services as shown below by clicking to "Connections" in left menu panel.
 <img src="src/extresources/images/Snip20180207_35.png" allign="center"/>
 
 Before you begin:
 
-a. Register your IoT device on WatsonIoTPlatform:
+<h1>a. Register your IoT device on WatsonIoTPlatform:</h1><br/>
 
 	1. goto your Bluemix services catalog and click IOT-service created in previous step.
 	2. On this page you will see Launch button, click this. 
@@ -94,7 +94,7 @@ a. Register your IoT device on WatsonIoTPlatform:
 		Authentication Token xxxxxx
 
 
-b. create Node-Red device simulator to receive events/send notification back to IoT device.
+<h1>b. create Node-Red device simulator to receive events/send notification back to IoT device.</h1>
 
 	1. goto the home page of boilerplate app created in Pre Requisite steps.
 	2. click "overview" menu option in left page panel.
@@ -102,20 +102,23 @@ b. create Node-Red device simulator to receive events/send notification back to 
 <img src="./src/extresources/images/Snip20180202_15.png" allign="left"/>
 	
 	Note: execute below steps 4 and 5, iff you dont have base-64 node plugin else continue from step-6 
-<img src="./src/extresources/images/Snip20171106_14.png" allign="left"/>
 	
 	4. On this Node Red editor page click menu -> Manage Palette -> Install. 
 	5. Type "base64" in search text box and install "node-red-node-base64" node plugin.
+<img src="./src/extresources/images/Snip20171106_14.png" allign="left"/>
 	
 	6. Again on Node Red editor page click menu on top right corner and select 'Import' -> 'Clipboard'.
 <img src="./src/extresources/images/Snip20180207_45.png" allign="left"/>
 
 	7. In pop up input dialog copy and paste from NodeRedJsIoTReciever.json file attached with this code base.
+	8. double click on below highlighted Nodes and cross check your created services instance details:
+<img src="./src/extresources/images/Snip20180207_46.png" allign="left"/>
 	
 	8. Click on 'Deploy' button. 
 
 
-How to build and run it:
+<h1>How to build and run it:</h1>
+
 
 1. Clone this application code into your local env using 'git clone <git-URL>'
 2. Create an ".properties" file similar to "sample-properties.properties" provided.
