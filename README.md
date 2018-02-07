@@ -22,11 +22,12 @@ Architecture:
 <img src="src/extresources/images/Snip20170721_19.png" allign="center"/>
 
 After completing this journey you will understand how to:
+
 a. Train VR classifier to detect an object in an image.
 b. Recognize speech using Speech To Text(EN) service of Watson.
 c. User friendly interaction by playing WAV stream received by calling Text to Speech.
-d. Store Images on cloud using IBM Cloud Cloudant DB service. 
-e. Leverage the IBM Cloud IoT platform. 
+d. Store Images on cloud using IBM Cloud Cloudant DB service. <br/>
+e. Leverage the IBM Cloud IoT platform. <br/>
 
 Dependencies:
 
@@ -43,17 +44,17 @@ Pre Requisite:
 4. This will create below three IBM Cloud service instances for you to start with IoT stuff:
 	* Node-Red JS sdk
 	* IoT Platform service
-	* Cloudant NoSQL DB service
+	* Cloudant NoSQL DB service. <br/>
 		Your newly created app instance will look like below:
 		<img src="src/extresources/images/Snip20180202_15.png" allign="center"/>
 5. get the credentials for below services, we will be updating them in a ".properties" file in few further steps:
 	a. Speech to Text
 	b. Text to Speech
 	c. Visual Recognition
-	d. IoT (created in previus step)
+	d. IoT (created in previous step)
 	e. Cloudant NoSQL(created in previus step)
 	
-   			You can mannually add your precreated Watson services as shown below by clicking to "Connections" in left menu panel.
+Note: You can mannually add your precreated Watson services as shown below by clicking to "Connections" in left menu panel.
 <img src="src/extresources/images/Snip20180207_35.png" allign="center"/>
 
 Before you begin:
@@ -63,19 +64,27 @@ a. Register your IoT device on WatsonIoTPlatform:
 	1. goto your Bluemix services catalog and click IOT-service created in previous step.
 	2. On this page you will see Launch button, click this. 
 <img src="src/extresources/images/Snip20180202_16.png" allign="center"/>
+
 	3. This will open saperate IBM Watson IoT Platform home page for your service.
+	
 	4. Select DEVICES option in left menu panel.
 <img src="src/extresources/images/Snip20180202_17.png" allign="center"/>
+
 	5. In order to register your device first you must have a device type to be created. If you have already created device type you can skip this step.
+	
 <img src="src/extresources/images/Snip20180202_19.png" allign="center"/>
 <img src="src/extresources/images/Snip20180202_20.png" allign="center"/>
 <img src="src/extresources/images/Snip20180207_36.png" allign="center"/>
-	6. Now follow the steps(3 till 11) mentioned here: https://console.bluemix.net/docs/services/IoT/iotplatform_task.html#iotplatform_task' or alternatively you can take reference from below screen shots:
+
+	6. To add & register a new device follow steps(3 till 11) mentioned here: https://console.bluemix.net/docs/services/IoT/iotplatform_task.html#iotplatform_task' or alternatively you can take reference from below screen shots:
+	
 <img src="src/extresources/images/Snip20180202_22.png" allign="center"/>
+<img src="src/extresources/images/Snip20180202_24.png" allign="center"/>
 <img src="src/extresources/images/Snip20180207_37.png" allign="center"/>
 <img src="src/extresources/images/Snip20180202_26.png" allign="center"/>
 <img src="src/extresources/images/Snip20180202_27.png" allign="center"/>
 <img src="src/extresources/images/Snip20180202_28.png" allign="center"/>
+
 	5. Once you register your device update below into your .properties file which we will create in next step:
 
 		Organization ID xxxx
@@ -83,6 +92,7 @@ a. Register your IoT device on WatsonIoTPlatform:
 		Device ID xxxxx
 		Authentication xxxxxx
 		Authentication Token xxxxxx
+
 
 b. create Node-Red device simulator to receive events/send notification back to IoT device.
 
@@ -99,8 +109,11 @@ b. create Node-Red device simulator to receive events/send notification back to 
 	
 	6. Again on Node Red editor page click menu on top right corner and select 'Import' -> 'Clipboard'.
 <img src="./src/extresources/images/Snip20180207_45.png" allign="left"/>
+
 	7. In pop up input dialog copy and paste from NodeRedJsIoTReciever.json file attached with this code base.
+	
 	8. Click on 'Deploy' button. 
+
 
 How to build and run it:
 
