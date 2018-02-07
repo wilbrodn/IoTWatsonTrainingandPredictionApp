@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="src/test/java"/>
 	<classpathentry including="**/*.java" kind="src" path="src/main/java"/>
 	<classpathentry kind="var" path="M2_REPO/javax/xml/bind/jaxb-api/2.2/jaxb-api-2.2.jar"/>
 	<classpathentry kind="var" path="M2_REPO/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar"/>
@@ -11,12 +10,12 @@
 	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/java-sdk/3.8.0/java-sdk-3.8.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/alchemy/3.8.0/alchemy-3.8.0.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/core/3.8.0/core-3.8.0.jar" sourcepath="SOURCE_ATTACHER/core-3.8.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/core/3.8.0/core-3.8.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/squareup/okhttp3/okhttp/3.7.0/okhttp-3.7.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/squareup/okio/okio/1.12.0/okio-1.12.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/squareup/okhttp3/logging-interceptor/3.7.0/logging-interceptor-3.7.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/squareup/okhttp3/okhttp-urlconnection/3.4.2/okhttp-urlconnection-3.4.2.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar" sourcepath="M2_REPO/com/google/code/gson/gson/2.8.0/gson-2.8.0-sources.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/bundles/repackaged/jersey-jsr166e/2.22.2/jersey-jsr166e-2.22.2.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/conversation/3.8.0/conversation-3.8.0.jar"/>
@@ -33,8 +32,8 @@
 	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/text-to-speech/3.8.0/text-to-speech-3.8.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/tone-analyzer/3.8.0/tone-analyzer-3.8.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/tradeoff-analytics/3.8.0/tradeoff-analytics-3.8.0.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/visual-recognition/3.8.0/visual-recognition-3.8.0.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/ibm/messaging/watson-iot/0.2.4/watson-iot-0.2.4.jar" sourcepath="SOURCE_ATTACHER/watson-iot-0.2.4-sources-1502204778865.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/watson/developer_cloud/visual-recognition/3.8.0/visual-recognition-3.8.0.jar" sourcepath="M2_REPO/com/ibm/watson/developer_cloud/visual-recognition/3.8.0/visual-recognition-3.8.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ibm/messaging/watson-iot/0.2.4/watson-iot-0.2.4.jar"/>
 	<classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.1.1/org.eclipse.paho.client.mqttv3-1.1.1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/commons-net/commons-net/3.3/commons-net-3.3.jar"/>
@@ -49,7 +48,7 @@
 	<classpathentry kind="var" path="M2_REPO/org/apache/geronimo/specs/geronimo-annotation_1.1_spec/1.0/geronimo-annotation_1.1_spec-1.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/junit/junit/3.8.1/junit-3.8.1.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/cloudant/cloudant-client/2.9.0/cloudant-client-2.9.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/cloudant/cloudant-client/2.9.0/cloudant-client-2.9.0.jar" sourcepath="M2_REPO/com/cloudant/cloudant-client/2.9.0/cloudant-client-2.9.0-sources.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/cloudant/cloudant-http/2.9.0/cloudant-http-2.9.0.jar"/>
 	<classpathentry kind="var" path="M2_REPO/commons-io/commons-io/2.4/commons-io-2.4.jar"/>
 	<classpathentry kind="src" path=".apt_generated">
