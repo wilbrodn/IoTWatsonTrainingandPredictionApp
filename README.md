@@ -1,4 +1,4 @@
-Introduction:
+<h1>Introduction:</h1>
 
 In this code pattern we will help to create a Watson Visual Recognition Image training app. 
 We will be using Watson's below services:
@@ -17,7 +17,7 @@ This code pattern consists of below two applications:
 
 Watson Visual Recognition Image training app is standalone java based application which can be run independently on device which has valid jre installed such as MacBook or any linux/Windows based operating system.
 
-Architecture:
+<h1>Architecture:</h1>
 
 <img src="src/extresources/images/Snip20170721_19.png" allign="center"/>
 
@@ -29,14 +29,14 @@ c. User friendly interaction by playing WAV stream received by calling Text to S
 d. Store Images on cloud using IBM Cloud Cloudant DB service. <br/>
 e. Leverage the IBM Cloud IoT platform. <br/>
 
-Dependencies:
+<h1>Dependencies:</h1>
 
 Note: this app has been tested on MacBook with below versions:
 1. java version "1.8.0_121"
 2. Apache Maven 3.2.5
 3. Zip 3.0
 
-Pre Requisite:
+<h1>Pre Requisite:</h1>
 
 1. goto bluemix catalog home page and under "Apps" select "Boilerplates".
 2. click "Internet of Things Platform Starter".
@@ -57,7 +57,7 @@ Pre Requisite:
 Note: You can mannually add your precreated Watson services as shown below by clicking to "Connections" in left menu panel.
 <img src="src/extresources/images/Snip20180207_35.png" allign="center"/>
 
-Before you begin:
+<h1>Before you begin:</h1><br/>
 
 <h1>a. Register your IoT device on WatsonIoTPlatform:</h1><br/>
 
