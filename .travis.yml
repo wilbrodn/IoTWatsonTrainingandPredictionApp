@@ -6,3 +6,7 @@ install:
   - mvn clean package
 script:
   - mvn --version
+notifications:
+  email:
+  - arprasto@in.ibm.com
+  - lbenn@us.ibm.com
