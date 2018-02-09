@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/IBM/IoTWatsonTrainingandPredictionApp.svg?branch=master)](https://travis-ci.org/IBM/IoTWatsonTrainingandPredictionApp)
+
 <h1>Introduction:</h1>
 
 In this code pattern we will help to create a Watson Visual Recognition Image training app. 
