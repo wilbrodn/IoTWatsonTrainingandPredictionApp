@@ -25,9 +25,14 @@ import java.io.OutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import com.ibm.watson.WatsonVRTraining.util.AppConstants;
 import com.ibm.watson.WatsonVRTraining.util.sound.JavaSoundPlayer;
+import com.ibm.watson.developer_cloud.service.security.IamOptions;
 import com.ibm.watson.developer_cloud.text_to_speech.v1.TextToSpeech;
+import com.ibm.watson.developer_cloud.text_to_speech.v1.model.SynthesizeOptions;
 import com.ibm.watson.developer_cloud.text_to_speech.v1.model.Voice;
 import com.ibm.watson.developer_cloud.text_to_speech.v1.util.WaveUtils;
 
@@ -36,7 +41,7 @@ public class TTSMain {
 	/*public static void main(String[] args) throws LineUnavailableException, IOException, UnsupportedAudioFileException {
 		
 		
-		TTSMain obj = new TTSMain(ScavengerContants.TTS_uname,ScavengerContants.TTS_pass);
+		TTSMain obj = new TTSMain("9dHjDTEgem8dtLqh6pibfQq7HrNHMb6S9vEDu9wkIqZP","https://stream.watsonplatform.net/text-to-speech/api");
 		obj.playTextToSpeech("Hello ! I am IBM watson artificially intelligent assisstence. "
 				+ "To start the application you can say the keyword like game or scavenger hunt game or hunt game");
 	}*/
@@ -45,47 +50,29 @@ public class TTSMain {
 	
 	TextToSpeech service = null;
 	
-	public TTSMain(String uname,String upass)
+	public TTSMain(String api_key,String url)
 	{
-		service = new TextToSpeech();
-		service.setUsernameAndPassword(uname,upass);
+		IamOptions options = new IamOptions.Builder()
+				.apiKey(api_key).build();
+		
+		service = new TextToSpeech(options);
+		service.setEndPoint(url);
 	}
 	
 	public TTSMain(){
 		
 	}
-	
-	/*public void playTextToSpeechUsingWhisk(String txt){
-    	String tmpStr = new CommandsUtils().executeCommand("/usr/local/bin/wsk","action", "invoke", "WatsonTTS", "--param", "message", txt);
-    	String activationID = tmpStr.split(" ")[tmpStr.split(" ").length-1];
-    	//System.out.println(activationID);
-    	JsonObject res_payload = new JsonParser().parse(new CommandsUtils().executeCommand("/usr/local/bin/wsk","activation", "result",activationID)).getAsJsonObject();
-    	System.out.println(res_payload.getAsJsonPrimitive("payload").getAsString().getBytes());
-    	byte[] decoded = null;
-			String encoded = res_payload.getAsJsonPrimitive("payload").getAsString();
-			decoded = Base64.getDecoder().decode(encoded);
-			try
-		    {
-		        File tmpWAV = File.createTempFile("tmp",".wav");
-		        tmpWAV.deleteOnExit();
-		        System.out.println(tmpWAV.getPath());
-		        FileOutputStream os = new FileOutputStream(tmpWAV, true);
-		        os.write(decoded);
-		        os.close();
-		        new JavaSoundPlayer().playWAVFile(tmpWAV);
-		    }
-		    catch (Exception e)
-		    {
-		        e.printStackTrace();
-		    }
-
-	}*/
-	
+		
 	public void playTextToSpeech(String txt){
 		
-		
-        InputStream stream = service.synthesize(txt, new Voice(AppConstants.TTS_name,AppConstants.TTS_gender,AppConstants.TTS_language),
-        		new com.ibm.watson.developer_cloud.text_to_speech.v1.model.AudioFormat("audio/wav")).execute();
+		SynthesizeOptions synthesizeOptions =
+			    new SynthesizeOptions.Builder()
+			      .text(txt)
+			      .accept("audio/wav")
+			      .voice(AppConstants.TTS_name)
+			      //.voice("es-LA_SofiaVoice")
+			      .build();
+        InputStream stream = service.synthesize(synthesizeOptions).execute();
         InputStream in=null;
         OutputStream out=null;
 		try {

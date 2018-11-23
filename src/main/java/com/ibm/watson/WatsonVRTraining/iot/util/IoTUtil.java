@@ -128,7 +128,15 @@ class MyNewCommandCallback implements CommandCallback, Runnable {
 				//refresh the Visual Recognition GUI with IBM Watson prediction results.
 				if(cmd.getCommand().equals("refreshUI"))
 				{
-					JSonDocumentTemplateClass db_rec = PredictionApp.getInstance().dbsvc.getIMGBase64(cmd.getData().toString().trim());
+					JSonDocumentTemplateClass db_rec =null;
+					try{
+					db_rec = PredictionApp.getInstance().dbsvc.getIMGBase64(cmd.getData().toString().trim());
+					}catch(Exception e){
+						PhotoCaptureFrame.getPhotoesJFrame().repaint();
+						publish_flag = true;
+						PhotoCaptureFrame.getImagebeingProcessedLabel().setText("PROCESSING IMAGES:0");
+						PhotoCaptureFrame.getImageRemainingProcessingLabel().setText("REMAINIG IMAGES:"+WatchDir.queue.size());
+					}
                 	PhotoCaptureFrame.updateCaptureFrame(new Base64EncoderDecoder().decodeFileToIMG(db_rec.getImg_base64()),db_rec.getImg_result_html());
 					PhotoCaptureFrame.getPhotoesJFrame().setVisible(true);
 					PhotoCaptureFrame.getPhotoesJFrame().repaint();

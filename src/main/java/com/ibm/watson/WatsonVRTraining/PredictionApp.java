@@ -22,18 +22,18 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.swing.SwingUtilities;
 
 import com.ibm.watson.WatsonVRTraining.CloudantNoSQLDB.DBCommunicator;
 import com.ibm.watson.WatsonVRTraining.iot.util.IoTUtil;
 import com.ibm.watson.WatsonVRTraining.speechToText.SpeechToTextWebSocketMain;
 import com.ibm.watson.WatsonVRTraining.textToSpeech.TTSMain;
 import com.ibm.watson.WatsonVRTraining.util.AppConstants;
+import com.ibm.watson.WatsonVRTraining.util.camera.JavaImageCapture;
+import com.ibm.watson.WatsonVRTraining.util.images.PhotoCaptureFrame;
 import com.ibm.watson.WatsonVRTraining.util.images.WatchDir;
 
 public class PredictionApp 
@@ -70,8 +70,8 @@ public class PredictionApp
     	 * c. IBM Watson Cloudant No SQL DB service
     	 * d. IBM Watson IoT connect
     	 */
-		tts = new TTSMain(AppConstants.TTS_uname,AppConstants.TTS_pass);
-		stt = new SpeechToTextWebSocketMain(AppConstants.STT_uname,AppConstants.STT_pass);
+		tts = new TTSMain(AppConstants.TTS_api_key,AppConstants.TTS_url);
+		//stt = new SpeechToTextWebSocketMain(AppConstants.STT_api_key,AppConstants.STT_url);
 		dbsvc = new DBCommunicator(AppConstants.cloudant_uname,AppConstants.cloudant_pass,AppConstants.cloudant_url,AppConstants.cloudant_dbName);
 		iotObj = new IoTUtil();
     }
@@ -81,12 +81,15 @@ public class PredictionApp
     {
     	try{
     		loadServices();
-		tts.playTextToSpeech("welcome to IBM Cloud platform. To start the prediction application you can say the keyword like. prediction app. result app. To exit from the app anytime you can say the keyword like. exit. i am done. please exit.");
+		tts.playTextToSpeech("welcome to IBM Cloud platform.");
 		
 		Thread hearingThread = new Thread() {
 			
 			public void run() {
-				stt.startSTT();
+				//stt.startSTT();
+				JavaImageCapture startCap = new JavaImageCapture(AppConstants.vr_process_img_dir,"tmp",PredictionApp.getInstance(),AppConstants.time_frame);
+				PhotoCaptureFrame.getPhotoesJFrame().setVisible(true);
+				SwingUtilities.invokeLater(startCap);
 			}
 		};
 		

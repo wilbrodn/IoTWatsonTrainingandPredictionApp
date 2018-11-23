@@ -29,11 +29,10 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 import com.ibm.watson.WatsonVRTraining.textToSpeech.TTSMain;
-import com.ibm.watson.WatsonVRTraining.util.CommandsUtils;
 import com.ibm.watson.WatsonVRTraining.util.AppConstants;
+import com.ibm.watson.WatsonVRTraining.util.CommandsUtils;
 import com.ibm.watson.WatsonVRTraining.util.ThreadMessage_hook;
 import com.ibm.watson.WatsonVRTraining.util.camera.JavaImageCapture;
-import com.ibm.watson.WatsonVRTraining.visualrecognition.VRMain;
 
 public class ImageTrainingApp {
 
@@ -50,7 +49,6 @@ public class ImageTrainingApp {
 	}
 	
     public TTSMain tts = null;
-    public VRMain vr_svc = null;
 
 	public void startTrainingApp()
 	{
@@ -58,8 +56,7 @@ public class ImageTrainingApp {
 		 * start all required below IBM Watson services:
 		 * a. Text To Speech
 		 */
-		tts = new TTSMain(AppConstants.TTS_uname,AppConstants.TTS_pass);
-		vr_svc = new VRMain(AppConstants.vr_version,AppConstants.vr_APIKey);
+		tts = new TTSMain(AppConstants.TTS_api_key,AppConstants.TTS_url);
 		
 		/*announce the welcome message*/
 		tts.playTextToSpeech("to train the model you need to give at least twenty or more images for each classifier. the more clear images"

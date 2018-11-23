@@ -19,9 +19,6 @@
 
 package com.ibm.watson.WatsonVRTraining.speechToText;
 
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,19 +36,20 @@ import com.ibm.watson.WatsonVRTraining.util.AppConstants;
 import com.ibm.watson.WatsonVRTraining.util.camera.JavaImageCapture;
 import com.ibm.watson.WatsonVRTraining.util.images.PhotoCaptureFrame;
 import com.ibm.watson.developer_cloud.http.HttpMediaType;
+import com.ibm.watson.developer_cloud.service.security.IamOptions;
 import com.ibm.watson.developer_cloud.speech_to_text.v1.SpeechToText;
-import com.ibm.watson.developer_cloud.speech_to_text.v1.model.RecognitionCallback;
 import com.ibm.watson.developer_cloud.speech_to_text.v1.model.RecognizeOptions;
-import com.ibm.watson.developer_cloud.speech_to_text.v1.model.SpeechResults;
+import com.ibm.watson.developer_cloud.speech_to_text.v1.model.SpeechRecognitionResults;
 import com.ibm.watson.developer_cloud.speech_to_text.v1.websocket.RecognizeCallback;
 
 public class SpeechToTextWebSocketMain {
 	private static Logger LOGGER = Logger.getLogger(SpeechToTextWebSocketMain.class.getName());
 	SpeechToText sttsvc = null;
-	RecognitionCallback callback = null;
-	public SpeechToTextWebSocketMain(String uname,String upass)
+	public SpeechToTextWebSocketMain(String apiKey, String url)
 	{
-		sttsvc = new SpeechToText(uname,upass);
+		IamOptions options = new IamOptions.Builder().apiKey(apiKey).build();
+		sttsvc = new SpeechToText(options);
+		sttsvc.setEndPoint(url);
 	}
 		
 	public void startSTT()
@@ -69,7 +67,7 @@ public class SpeechToTextWebSocketMain {
 
             AudioInputStream audio = new AudioInputStream(line);
             
-		sttsvc.recognizeUsingWebSocket(audio,getRecognizeOptions(),new MicrophoneRecognizeDelegate());
+		sttsvc.recognizeUsingWebSocket(getRecognizeOptions(audio),new MicrophoneRecognizeDelegate());
 		//LOGGER.log(Level.FINE,"callBack --------------- "+callback.toString());
 		}catch (LineUnavailableException e) {
 			LOGGER.log(Level.SEVERE,"Line not available");
@@ -77,9 +75,10 @@ public class SpeechToTextWebSocketMain {
 		}
 	}
 	
-    private RecognizeOptions getRecognizeOptions() {
+    private RecognizeOptions getRecognizeOptions(AudioInputStream audio) {
         return new RecognizeOptions.Builder()
-                .continuous(true)
+                //.continuous(true)
+        		.audio(audio)
                 .contentType(HttpMediaType.AUDIO_RAW+"; rate=16000; channels=1")
                 .interimResults(true)
                 .inactivityTimeout(-1)
@@ -119,7 +118,7 @@ public class SpeechToTextWebSocketMain {
 			System.exit(0);
 		}
 
-		public void onTranscription(SpeechResults speechResults) {
+		public void onTranscription(SpeechRecognitionResults speechResults) {
 			//LOGGER.log(Level.INFO, "in Transcription now "+speechResults);
             if(speechResults.getResults() != null && !speechResults.getResults().isEmpty()) {
                 String text = speechResults.getResults().get(0).getAlternatives().get(0).getTranscript();
@@ -150,6 +149,11 @@ public class SpeechToTextWebSocketMain {
 
 		public void onListening() {
 			LOGGER.log(Level.INFO, "now listening");
+		}
+
+		public void onTranscriptionComplete() {
+			// TODO Auto-generated method stub
+			
 		}
     }
 }

@@ -24,6 +24,10 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.logging.Logger;
@@ -40,6 +44,8 @@ import javax.swing.SwingConstants;
 import org.apache.commons.io.FilenameUtils;
 
 import com.ibm.watson.WatsonVRTraining.util.CommandsUtils;
+import com.ibm.watson.WatsonVRTraining.LaunchApp;
+import com.ibm.watson.WatsonVRTraining.PredictionApp;
 import com.ibm.watson.WatsonVRTraining.util.AppConstants;
 
 public class PhotoCaptureFrame extends JFrame {
@@ -96,8 +102,7 @@ public class PhotoCaptureFrame extends JFrame {
     	headerPanel.add(ImagebeingProcessedLabel);
     	headerPanel.add(btn);
     	headerPanel.add(appIDLabel);
-    	headerPanel.setSize(new Dimension(getWidth(),10));
-    	
+    	headerPanel.setSize(new Dimension(getWidth(),10));    	
     	
         JPanel contentPane = new JPanel();
         contentPane.add(headerPanel);
@@ -109,8 +114,64 @@ public class PhotoCaptureFrame extends JFrame {
         f.setResizable(false);
         f.setPreferredSize(new Dimension(dim.width/2-30,dim.height-60));
         f.setVisible(true);
+        f.addWindowListener(new WindowListener() {
+			
+			@Override
+			public void windowOpened(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void windowIconified(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void windowDeiconified(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void windowDeactivated(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void windowClosing(WindowEvent e) {
+				// TODO Auto-generated method stub
+				announceByeMsg();
+			}
+			
+			@Override
+			public void windowClosed(WindowEvent e) {
+				
+				
+			}
+			
+			@Override
+			public void windowActivated(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+        
 	}
 		
+	private void announceByeMsg()
+	{
+		if(!LaunchApp.isTraining) {
+        	PredictionApp.getInstance().tts.playTextToSpeech("Thanks for using this application. Hoping to see you soon on IBM Watson cloud platform.");
+        	PredictionApp.getInstance().iotObj.closeIOTConnection();
+        	System.exit(0);
+		}
+		
+	}
+
+	
 	public static JLabel getImageRemainingProcessingLabel()
 	{
 		if(obj == null){

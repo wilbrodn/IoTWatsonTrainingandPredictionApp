@@ -43,6 +43,7 @@ import javax.swing.JOptionPane;
 public class LaunchApp {
 
 	private static Properties loadedProperties = new Properties();
+	public static boolean isTraining=true;
 
 	public static void main(String[] args) 
 	{
@@ -62,6 +63,7 @@ public class LaunchApp {
 	if(args[1].toLowerCase().trim().equals("trainapp")){
 		ImageTrainingApp.getInstance().startTrainingApp();
 	}else if(args[1].toLowerCase().trim().equals("predictionapp")){
+		isTraining=false;
 		PredictionApp.getInstance().startGame();
 	}else{
 		JOptionPane.showMessageDialog(null,"app name can be one of 'trainApp' or 'predictionApp'","ApplicationError",JOptionPane.ERROR_MESSAGE);
@@ -89,7 +91,5 @@ public class LaunchApp {
     			}
     		}
     	}
-
 	}
-
 }

@@ -29,17 +29,16 @@ import com.ibm.watson.developer_cloud.visual_recognition.v3.VisualRecognition;
 
 public class AppConstants 
 {
-	public static String TTS_uname = LaunchApp.getLoadedProperties().getProperty("TTS_uname").trim(),
-			TTS_pass = LaunchApp.getLoadedProperties().getProperty("TTS_pass").trim(),			
-			TTS_gender = LaunchApp.getLoadedProperties().getProperty("TTS_gender").trim(),
-			TTS_language = LaunchApp.getLoadedProperties().getProperty("TTS_language").trim(),
+	public static String 
 			TTS_name =  LaunchApp.getLoadedProperties().getProperty("TTS_name").trim(),
+			TTS_api_key = LaunchApp.getLoadedProperties().getProperty("TTS_api_key").trim(),
+			TTS_url = LaunchApp.getLoadedProperties().getProperty("TTS_url").trim(),
 			
 			/*
 			 * Speech To Text cred
 			 */
-			STT_uname = LaunchApp.getLoadedProperties().getProperty("STT_uname").trim(),
-			STT_pass = LaunchApp.getLoadedProperties().getProperty("STT_pass").trim(),
+			STT_api_key = LaunchApp.getLoadedProperties().getProperty("STT_api_key").trim(),
+			STT_url = LaunchApp.getLoadedProperties().getProperty("STT_url").trim(),
 			
 			/*
 			 * Visual Recognition details
@@ -49,7 +48,7 @@ public class AppConstants
 			vr_train_img_dir_path = tmp_image_dir_path+"/train",
 			vr_process_img_dir_path = tmp_image_dir_path+"/process",
 			vr_classifier_name = LaunchApp.getLoadedProperties().getProperty("vr_classifier_name").trim(),
-			vr_version = LaunchApp.getLoadedProperties().getProperty("vr_version",VisualRecognition.VERSION_DATE_2016_05_20).trim(),
+			vr_version = LaunchApp.getLoadedProperties().getProperty("vr_version","2018-03-19").trim(),
 			vr_negative_example_zip = LaunchApp.getLoadedProperties().getProperty("vr_negative_example_zip","./src/extresources/images/australianterrier.zip").trim(),
 			
 			/*
@@ -59,6 +58,7 @@ public class AppConstants
 			cloudant_pass = LaunchApp.getLoadedProperties().getProperty("cloudant_pass").trim(),
 			cloudant_url = LaunchApp.getLoadedProperties().getProperty("cloudant_url").trim(),
 			cloudant_dbName = LaunchApp.getLoadedProperties().getProperty("cloudant_dbName").trim(),
+			cloudant_api_key = LaunchApp.getLoadedProperties().getProperty("cloudant_api_key").trim(),
 			
 			/*
 			 * IOT device params

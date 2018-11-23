@@ -51,6 +51,7 @@ import com.github.sarxos.webcam.WebcamPanel;
 import com.github.sarxos.webcam.WebcamPicker;
 import com.github.sarxos.webcam.WebcamResolution;
 import com.ibm.watson.WatsonVRTraining.ImageTrainingApp;
+import com.ibm.watson.WatsonVRTraining.LaunchApp;
 import com.ibm.watson.WatsonVRTraining.PredictionApp;
 import com.ibm.watson.WatsonVRTraining.util.CommandsUtils;
 import com.ibm.watson.WatsonVRTraining.util.AppConstants;
@@ -204,7 +205,7 @@ public class JavaImageCapture extends JFrame implements Runnable, WebcamListener
 						cmdUtils.executeCommand("bash","-c","cd "+AppConstants.vr_train_img_dir_path+"; zip "+img_file_prefix+"_positive_examples.zip "+img_file_prefix+"*.jpg");
 						cmdUtils.executeCommand("bash","-c","rm "+AppConstants.vr_train_img_dir_path+"/"+img_file_prefix+"*.jpg");
 						try {
-							new ImageTraining().createClassifier(img_file_prefix,AppConstants.vr_train_img_dir_path+"/"+img_file_prefix+"_positive_examples.zip",negative_zip);
+						new ImageTraining(img_file_prefix,AppConstants.vr_train_img_dir_path+"/"+img_file_prefix+"_positive_examples.zip",negative_zip).createClassifier();
 						} catch (TrainingAppException e1) {
 							e1.printStackTrace();
 							webcam.close();
@@ -215,7 +216,7 @@ public class JavaImageCapture extends JFrame implements Runnable, WebcamListener
 						}
 							main_window.dispose();
 						}
-						//System.exit(0);
+						System.exit(0);
 					}
 				}
 			}
