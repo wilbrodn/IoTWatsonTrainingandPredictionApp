@@ -1,8 +1,5 @@
 target/**
 src/test/**
-sample-properties.properties
-
-sample-properties.properties
 /.apt_generated/
 /target/*
 /src/main/java/com/ibm/watson/WatsonVRTraining/test/*
