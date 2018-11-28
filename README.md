@@ -144,3 +144,9 @@ b. Running the Prediction app
 	2. To start the prediction app your voice will be recognized through Watson STT service to recognize any of key word like:'prediction app' or 'result app'.
 	2. This will connect your device to Watson IoT and captured images will be stored in configured CLOUDANT DB.
 	3. To exit from this app your voice will be recognized through Watson STT service to recognize any of key word: 'exit' or 'i am done' or 'i'm done'.
+	
+	
+## License
+This code pattern is licensed under the Apache Software License, Version 2. Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the Developer [Certificate of Origin, Version 1.1 (“DCO”)] (https://developercertificate.org/) and the [Apache Software License, Version 2]( (http://www.apache.org/licenses/LICENSE-2.0.txt).
+
+ASL FAQ link: http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN
